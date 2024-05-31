@@ -1,0 +1,724 @@
+/*Start Global Role */
+:root {
+    --red-color: #ff305b;
+    --gray-bg: #f1f1f1;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.clear {
+    clear: both;
+}
+.main-title {
+    text-align: center;
+}
+.main-title h2 {
+    font-size: 40px;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 60px;
+}
+.main-title h2::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 1px;
+    background: var(--red-color);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+.main-title h2::after {
+    content: "";
+    width: 80px;
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    height: 10px;
+    transform: translateX(-50%);
+    border-bottom: 1px solid var(--red-color);
+    border-top: 1px solid var(--red-color);
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/*End Global Role */
+/* Start Header */
+.header {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+.header .container {
+    
+}
+.header .container .logo {
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 17px 0px;
+}
+.header .container .logo a {
+    color: #ff305b;
+}
+
+.header .container ul {
+    float: right;
+}
+.header .container ul li {
+    float: left;
+    padding: 21px 8px;
+}
+.header .container ul a {
+    color: white;
+    transition: 0.3s;
+}
+.header .container ul a.active,
+.header .container ul a:hover {
+    color: #ff305b;
+}
+.toggel {
+    color: var(--red-color);
+    float: right;
+    display: none;
+    font-size: 20px;
+}
+@media screen and (max-width: 767px) {
+    .header .container {
+        width: 70%;
+    }
+    .toggel {
+        display: block;
+        padding: 20px;
+    }
+    .header .container ul {
+        background-color: #333;
+        padding: 0 130px;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 0; 
+        overflow: hidden;
+        transition: 0.3s;
+        opacity: 0;
+    }
+    .toggel:hover + ul {
+        height: 100%;
+    }
+    .header .container ul li {
+        float: none;
+        padding: 15px 0;
+    }
+}
+
+/* End Header */
+/* Start Landing */
+.landing {
+    background-image: url("../images/hero\ img.jpg");
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+.landing::before {
+
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(0 0 0 / 60%);
+    width: 100%;
+    height: 100%;
+}
+.landing .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+.landing .text h3 {
+    color: white;
+    font-size: 25px;
+}
+.landing .text h1 {
+    color: #ff305b;
+    font-size: 60px;
+    margin: 16px auto;
+}
+.landing .text h4 {
+    color: white;
+    font-size: 25px;
+    font-weight: normal;
+    width: fit-content;
+    margin: 0 auto;
+    position: relative;
+}
+.landing .text h4::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: white;
+    top: 0;
+    right: -12px;
+}
+@media screen and (max-width: 767px) {
+    .landing .text h1 {
+        font-size: 30px;
+    }
+    .landing .text h3,
+    .landing .text h4 {
+        font-size: 18px;
+    }
+}
+/* End Landing */
+/* Start hello */
+.hello {
+    padding: 80px 0;
+}
+.hello .image {
+    float: left;
+    border: 8px solid #555555;
+    border-radius: 5px;
+}
+.hello .image .image-container {
+    border-radius: 5px;
+    width: 320px;
+    transform: translate(25px, 25px);
+    overflow: hidden;
+}
+.hello .image .image-container .image-caption {
+    position: absolute;
+    width: 100%;
+    background: rgb(0 0 0 / 60%);
+    height: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.hello .image .image-container:hover .image-caption {
+    height: 100%;
+}
+.hello .image .image-caption .social-media {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+}
+.hello .image .image-caption .social-media svg {
+    padding: 0 7px;
+}
+.hello .image .image-caption .social-media svg:hover {
+    color: #ff305b;
+}
+@media screen and (max-width:992px) {
+    .hello .image {
+        border: none;
+    }
+    .hello .image .image-container {
+        margin: 0 auto;
+        transform: translate(0 , 0);
+    }
+}
+.hello .text {
+    float: right;
+    width: 42%;
+}
+.hello .text h2 {
+    font-size: 34px;
+    margin-bottom: 25px;
+    padding-left: 13px;
+    position: relative;
+}
+.hello .text h2::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    background: #ff305b;
+    height: 100%;
+    left: 0;
+}
+.hello .text p {
+    color: #555555;
+    line-height: 1.6;
+    border-bottom: 1px dashed #555555;
+    padding-bottom: 15px;
+}
+.hello .text ul li {
+    float: left;
+    width: 50%;
+    padding: 3px 0;
+    color: #5a5565;
+}
+.hello .text ul li a { 
+    color: #82807e;
+}
+.hello .text ul li span {
+    color: #333;
+    font-weight: bold;
+    font-size: 20px;
+}
+@media screen and (max-width: 767px) {
+    .hello .text {
+        width: 320px;
+        margin: 20px auto;
+        float: none;
+    }
+    .hello .image {
+        float: none;
+        text-align: center;
+    }
+    .hello .text ul li {
+        float: none;
+        width: 100%;
+        padding: 5px 0;
+    }
+}
+.hello .text .download {
+    margin-top: 10px;
+}
+.hello .text .download a {
+    background-color: #ff305b;
+    border-radius: 4px;
+    margin-right: 10px;
+    padding: 10px 25px; 
+    color: white;
+    display: inline-block;   
+    transition: 0.3s;
+}
+.hello .text .download a:hover {
+    background-color: #EC2403;
+}
+/* End hello */
+/* Start Services */
+.services {
+    padding: 80px 0;
+    background-color: var(--gray-bg);
+}
+.services .box {    
+    width: 25%;
+    float: left;
+    text-align: center;
+    padding: 10px;
+    transition: 0.3s;
+}
+@media screen and (max-width:992px) {
+    .services .box {
+        width: 50%;
+    }
+}
+@media screen and (max-width:767px) {
+    .services .box {
+        width: 100%;
+    }
+}
+.services .box svg {
+    font-size: 30px;
+    padding: 25px;
+    color: var(--red-color);
+    transition: 0.3s;
+}
+.services .box:hover {
+    background-color: white;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+.services .box:hover svg {
+    transform: scale(1.2);
+}
+.services .box h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.services .box p {
+    color: #555555;
+    padding-bottom: 20px;
+}
+/* End Services */
+/* Start Portfolio */
+.portfolio {
+    padding: 80px 0;
+}
+.portfolio .shuffle {
+    text-align: center;
+}
+.portfolio .shuffle a {
+    text-transform: uppercase;
+    padding: 10px;
+    color: #405368;
+    transition: 0.3s;
+}
+.portfolio .shuffle a.active,
+.portfolio .shuffle a:hover {
+    color: var(--red-color);
+}
+.portfolio .images {
+    width: 100%;
+    margin: 40px auto 0;
+    text-align: center;
+}
+.portfolio .images .image-holder {
+    width: 30%;
+    float: left;
+    position: relative;
+    transition: 0.3s;
+    margin: 10px;
+}
+@media screen and (max-width: 992px) {
+    .portfolio .images .image-holder {
+        width: 46%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .portfolio .images .image-holder {
+        width: 100%;
+    }
+}
+.portfolio .images .image-holder img {
+    max-width: 100%;
+}
+.portfolio .images .image-holder .image-overlay {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background: rgb(0, 0, 0, .4);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.3s;
+}
+.portfolio .images .image-holder:hover .image-overlay {
+    opacity: 100%;
+}
+.portfolio .images .image-holder .image-overlay svg {
+    color: var(--red-color);
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 26px;
+}
+/* End Portfolio */
+/* Start Statistic */
+.statistic {
+    padding: 80px 0;
+    background-color: var(--gray-bg);
+}
+.statistic .box {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+@media screen and (max-width :991px) {
+    .statistic .box{
+        width: 50%;
+        margin-bottom: 60px;
+    }
+}
+@media screen and (max-width :767px) {
+    .statistic .box{
+        width: 100%;
+        margin-bottom: 60px;
+    }
+}
+.statistic .box svg {
+    color: var(--red-color);
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+.statistic .box h3 {
+    font-size: 26px;
+}
+.statistic .box p {
+    color: #555555;
+    margin-top: 10px;
+}
+/* End Statistic */
+/* Start Feedback */
+.feedback {
+    padding: 80px 0;
+}
+.feedback .box {
+    width: 80%;
+    margin: 0 auto;
+    background-color: var(--gray-bg);
+    padding: 50px 40px;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.feedback .box .image {
+    width: 120px;
+}
+.feedback .box .image img {
+    border-radius: 50%;
+    float: left;
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+}
+.feedback .box .text {
+    float: left;
+    width: 70%;
+    margin-left: 30px;
+}
+.feedback .box .text h3 { 
+    font-size: 25px;
+    color: #333;
+    margin-bottom: 15px;
+}
+.feedback .box .text a {
+    color: #555;
+}
+.feedback .box .text p {
+    color: #555555;
+    font-style: italic;
+    font-size: 16px;
+    margin-top: 15px;
+    line-height: 1.6;
+
+}
+.feedback .box .text .star {
+    margin-top: 20px;
+    color: gold;
+}
+.bg-red {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-width: 150px;
+    border-style: solid;
+    border-color: transparent var(--red-color) transparent transparent;
+    top: -150px;
+    left: -150px;
+    transform: rotate(45deg);
+}
+/* End Feedback */
+/* Start Blog */
+.blog {
+    padding: 80px 0;
+    background-color: var(--gray-bg);
+}
+.blog .box {
+    float: left;
+    background-color: white;
+    width: 31.3%;
+}
+.blog .box:nth-child(2) {
+    margin: 0 25px;
+}
+@media screen and (max-width: 992px) {
+    .blog .box {
+        width: 46%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .blog .box {
+        width: 80%;
+        margin: auto;
+        float: none;
+    }
+    .blog .box:nth-child(2) {
+        margin: 15px auto;
+    }
+}
+.blog .box img,
+.blog .box iframe {
+    max-width: 100%;
+    width: 100%;
+    min-height: 294.22px;
+}
+.blog .box .text {
+    padding: 15px;
+}
+.blog .box .text h3 {
+    margin-bottom: 15px;
+}
+.blog .box .text h3 a {
+    font-size: 24px;
+    color:#333;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+.blog .box .text h3 a:hover {
+    color: var(--red-color)
+}
+.blog .box .text p {
+    color: #555555;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+.blog .box .text a.read-more {
+    text-transform: uppercase;
+    color: #333333;
+    padding: 15px 0;
+    display: block;
+}
+.blog .box .text a.read-more:hover {
+    color: var(--red-color);
+}
+/* End Blog */
+/* Start Contact */
+.contact {
+    padding: 80px 0;
+}
+.contact .form-container {
+    width: 70%;
+    margin: 0 auto;
+}
+.contact .form-container input {
+    height: 40px;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+.contact .form-container input.name,
+.contact .form-container input.email {
+    width: 48%;
+}
+.contact .form-container input.email {
+    float: right;
+}
+.contact .form-container input.subject {
+    width: 100%;
+}
+.contact .form-container textarea {
+    width: 100%;
+    height: 100px;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: both;
+}
+.contact .form-container input:focus,
+.contact .form-container textarea:focus {
+    outline: none;
+    border-color: var(--red-color);
+}
+.contact .form-container button {
+    background: var(--red-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-top: 15px;
+    cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+    .contact .form-container input.name,
+    .contact .form-container input.email {
+        float: none;
+        width: 100%;
+    }
+}
+/* End Contact */
+/* Start Footer */
+.footer {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #333333;
+    color: white;
+}
+.footer .social-media {
+
+}
+.footer .social-media svg {
+    padding: 12px;
+}
+.footer .text {
+    
+}
+.footer .text a {
+    color: var(--red-color);
+}
+@media screen and (max-width:767px) {
+    .footer .social-media,
+    .footer .text {
+        font-size: 14px;
+    }
+}
+/* End Footer */
+.desing {
+    display: inline-block;
+    width: 95px;
+    overflow: hidden;
+    vertical-align: middle;
+    animation: deleteWord 1.5s linear 1.5s infinite;
+}
+.developer {
+    display: inline-block;
+    width: 0px;
+    overflow: hidden;
+    vertical-align: middle;
+    animation: creatWord 1.5s  1.5s infinite;
+    display: none;
+}
+@keyframes deleteWord {
+    0% {
+        width: 95px;
+    }
+    50% {
+        width: 0;
+    }
+    100% {
+        width: 95px;
+    }
+}
+/* @keyframes deleteWord {
+    0% {
+        width: 95px;
+    }
+    50% {
+        width: 0;
+    }
+    100% {
+        width: 95px;
+    }
+} */
+/* @keyframes creatWord {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 115px;
+    }
+} */
